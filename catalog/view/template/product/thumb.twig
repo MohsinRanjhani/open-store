@@ -1,0 +1,39 @@
+<div class="card h-100 border rounded" style="border-color: #ddd;">
+  <div class="text-center p-3">
+    <a href="{{ href }}">
+      <img src="{{ thumb }}" class="img-fluid" alt="{{ name }}" title="{{ name }}" style="max-height: 220px; object-fit: contain;">
+    </a>
+  </div>
+  <div class="px-3 pb-2">
+    <h5 style="font-size: 16px; font-weight: 600; color:rgb(11, 118, 151);">
+      <a href="{{ href }}" class="text-decoration-none">{{ name }}</a>
+    </h5>
+    {% if description %}
+      <p style="font-size: 14px; color: #555;">{{ description|striptags|slice(0, 120) ~ '...' }}</p>
+    {% endif %}
+    {% if price %}
+      <p class="fw-bold" style="color: #333;">{{ price }}</p>
+    {% endif %}
+  </div>
+  <div class="bg-light d-flex justify-content-around p-2 border-top">
+    <form method="post" data-oc-toggle="ajax" data-oc-load="{{ cart }}" data-oc-target="#cart" class="m-0">
+      <input type="hidden" name="product_id" value="{{ product_id }}"/>
+      <input type="hidden" name="quantity" value="{{ minimum }}"/>
+      <button type="submit" formaction="{{ cart_add }}" class="btn btn-primary btn-sm">
+        <i class="fa fa-shopping-cart"></i> CLICK TO BUY
+      </button>
+    </form>
+    <form method="post" class="m-0">
+      <input type="hidden" name="product_id" value="{{ product_id }}"/>
+      <button type="submit" formaction="{{ wishlist_add }}" class="btn btn-outline-primary btn-sm">
+        <i class="fa fa-heart"></i>
+      </button>
+    </form>
+    <form method="post" class="m-0">
+      <input type="hidden" name="product_id" value="{{ product_id }}"/>
+      <button type="submit" formaction="{{ compare_add }}" class="btn btn-outline-primary btn-sm">
+        <i class="fa fa-exchange"></i>
+      </button>
+    </form>
+  </div>
+</div>

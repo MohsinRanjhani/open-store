@@ -1,0 +1,7 @@
+{
+  "name": "opencart/opencart",
+  "description": "OpenCart is an open source PHP-based online shopping cart system.",
+  "require": {
+    "twig/twig": "^3.21"
+  }
+}
