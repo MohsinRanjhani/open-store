@@ -1,0 +1,12 @@
+
+config.php
+adminpanel/config.php
+
+/system/storage/
+/image/cache/
+/system/logs/
+
+
+.vscode/
+.env
+.DS_Store
